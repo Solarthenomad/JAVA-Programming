@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//잘 이해가 안되는데...다시 한 번해보는 것도 좋을 것 같음
 //숫자 섞기 = math.random
 public class print_list_ex2 {
     public static void main(String[] args) {
@@ -18,8 +18,60 @@ public class print_list_ex2 {
 
         }
 
+
+
+
         System.out.println(Arrays.toString(numArr));
         //main 문 반복
 
+    }
+
+
+    class Ex_2_1{
+        public static void main(String[] args) {
+            int[] numArr = {0,1,2,3,4,5,6,7,8,9};
+            System.out.println(Arrays.toString(numArr));
+
+            for (int i = 0; i < numArr.length; i++) {
+                int n = (int)(Math.random()*10);
+                int tmp = numArr[i];
+                numArr[i] = numArr[n];
+                numArr[n] = tmp;
+                System.out.println(Arrays.toString(numArr));
+
+            }
+        }
+    }
+
+    //로또 공 뽑기
+    //6개의 임의의 공을 뽑고 싶음
+    class ex_2_2{
+        public static void main(String[] args) {
+
+            //인덱스 번호 : 0~44까지이고 정수 0~44까지가 자동으로 배열안에 포함되게 된다.
+            int[] ball = new int[45];
+            //45개의 정수값들을 자동으로  생성해서 배열 ball에 넣어주기
+            System.out.println(Arrays.toString(ball));
+
+            //배열의 각 요소에 1~45의 값ㅇ르 저장한다.
+            for (int i = 0; i < ball.length; i++) {
+                ball[i] = i+1;  //ball[0]에 1이 저장됨
+            }
+            int tmp = 0; //두 값을 바꾸는데 사용할 임시 변수
+            int j = 0;  //임의의 값을 얻어서 저장할 변수
+
+            //배열의 i번째 요소와 임의의 요소에 저장된 값을 서로 바꿔서 값을
+            //0번째부터 5번째 요소까지 모두 6개만 바꾼다.
+
+            for (int i = 0; i < 6; i++) {
+                j = (int)(Math.random()*45);
+                tmp = ball[i];
+                ball[i] = ball[j];
+                ball[j] = tmp;
+                System.out.println(Arrays.toString(ball[j]));
+
+            }
+
+        }
     }
 }
