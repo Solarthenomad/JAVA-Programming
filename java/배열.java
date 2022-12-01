@@ -22,7 +22,7 @@ class Ext_1_tmp {
         int[] score;  //배열 score을 선언한다.(참조 변수)
         score = new int[5];   //int 타입 배열 안의 인덱스 5개를 만든다.
 
-        score[3] =100;   //
+        score[3] =100;   //score의 4번째 인덱스에 100이라는 값을 넣는다.
         System.out.println("score[0]="+score[0]);
         System.out.println("score[3]"+score[3]);
 
